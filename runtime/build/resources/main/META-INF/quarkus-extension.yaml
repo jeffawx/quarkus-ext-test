@@ -1,0 +1,14 @@
+---
+artifact: "demo:my-ext::jar:1.0"
+name: "my-ext"
+metadata:
+  built-with-quarkus-core: "3.2.2.Final"
+  extension-dependencies:
+  - "io.quarkus:quarkus-arc"
+  - "io.quarkus:quarkus-vertx"
+  - "io.quarkus:quarkus-core"
+  - "io.quarkus:quarkus-netty"
+  - "io.quarkus:quarkus-mutiny"
+  - "io.quarkus:quarkus-undertow"
+  - "io.quarkus:quarkus-vertx-http"
+  - "io.quarkus:quarkus-smallrye-context-propagation"

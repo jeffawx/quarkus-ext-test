@@ -12,4 +12,5 @@ dependencies {
     testImplementation("io.rest-assured:rest-assured")
 
     kapt("io.quarkus:quarkus-extension-processor:3.2.2.Final")
+    kaptTest("io.quarkus:quarkus-extension-processor:3.2.2.Final")
 }

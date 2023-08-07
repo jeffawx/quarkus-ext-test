@@ -3,9 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     `java-library`
     kotlin("jvm") version "1.8.22"
+    `maven-publish`
 }
 
 allprojects {
+    apply(plugin="maven-publish")
     repositories {
         mavenCentral()
     }
@@ -13,11 +15,21 @@ allprojects {
 
 subprojects {
     apply(plugin="java-library")
-    apply(plugin="maven-publish")
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
-    group = "demo"
-    version = "1.0"
+    publishing {
+        publications {
+            val sourcesJar by tasks.registering(Jar::class) {
+                archiveClassifier.set("sources")
+                from(sourceSets.main.get().allSource)
+            }
+
+            create<MavenPublication>("default") {
+                from(components["java"])
+                artifact(sourcesJar.get())
+            }
+        }
+    }
 
     tasks {
         kotlin {

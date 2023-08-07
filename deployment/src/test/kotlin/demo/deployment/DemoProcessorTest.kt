@@ -11,7 +11,7 @@ import org.junit.jupiter.api.extension.RegisterExtension
 class DemoProcessorTest {
     @Test
     fun sayHello() {
-        RestAssured.`when`()["/hello"].then().statusCode(200).body(Matchers.`is`("Hey"))
+        RestAssured.`when`()["/sayHello"].then().statusCode(200).body(Matchers.`is`("Hey"))
     }
 
     companion object {

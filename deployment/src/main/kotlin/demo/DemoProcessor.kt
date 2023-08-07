@@ -15,7 +15,7 @@ class DemoProcessor {
         config: HelloConfig
     ): ServletBuildItem {
         return ServletBuildItem.builder("my-ext", HelloServlet::class.java.name)
-            .addInitParam("text", config.text)
-            .addMapping("/hello").build()
+            .addInitParam("text", config.text())
+            .addMapping("/sayHello").build()
     }
 }

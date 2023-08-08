@@ -16,7 +16,9 @@ class DemoProcessorTest {
 
     companion object {
         @RegisterExtension
-        val config = QuarkusUnitTest().withApplicationRoot { jar: JavaArchive ->
+        val config = QuarkusUnitTest()
+            //.setAllowTestClassOutsideDeployment(true) // tried still not work
+            .withApplicationRoot { jar: JavaArchive ->
             jar.addAsResource(
                 StringAsset(
                     "quarkus.my.ext.text=Hey"

@@ -1,6 +1,6 @@
 # quarkus-ext-test
 
-`./gradlew test` fails: `No config found for interface demo.HelloConfig`, not expected
+`./gradlew test` fails: `No config found for interface demo.HelloConfig`, not expected!!
 
 But if publish the jar by `./gradlew publishToMavenLocal -x test`, go to `test-app` folder, run
 
